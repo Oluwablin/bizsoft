@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <!-- Bootstrap CSS 4 -->
-    <!-- <link rel="stylesheet" href=".../assets/bootstrap4/bootstrap.min.css') }}" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -159,6 +159,23 @@
             padding-left: 30px;
             padding-right: 40px;
         }
+
+        .flex-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            background-color: lightgray;
+            background-size: auto;
+            border: 1px black;
+            padding: 15px;
+        }
+
+        .flex-container h6.active{
+            color: #0c7db1;
+        }
+
+        /* .flex-container p{
+            display: inline-block;
+        } */
         
     </style>
 
@@ -267,6 +284,15 @@
     <div class="section" style="padding-left: 30px;">
         <br>
         <h3>Leaves</h3>
+        <br>
+        <div class="flex-container">
+            <div> <h6 class="active"> My Leave </h6></div>
+            <div> <h6>Assign Leave</h6> </div>
+            <div> <h6>Manage Leave</h6> </div>
+            <div> <h6>Leave Balance</h6> </div>
+            <div> <h6>Leave Calender</h6> </div>
+            <div> <button style="text-align: right; background-color: rgb(12, 12, 12);"><font color=white>Apply for Leave</font></button> </div>
+        </div>
     </div>
     <br>
     <br>

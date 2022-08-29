@@ -3,11 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <!-- Bootstrap CSS 4 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -73,9 +76,9 @@
 
         .wrapper .sidebar ul li a{
             display: block;
-            padding: 13px 30px;
+            padding: 12px 20px;
             color: rgb(241, 237, 237);
-            font-size: 16px;
+            font-size: 15px;
             position: relative;
         }
 
@@ -160,22 +163,60 @@
             padding-right: 40px;
         }
 
-        .flex-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-            background-color: lightgray;
+        .top-container h3{
+            display: inline-block;
+        }
+
+        .top-container i{
+            float: right;
+            padding-right: 20px;
+            padding-left: 1em; 
+        }
+
+        .flex-container{                 
+            background-color: lightgray;           
+        }
+
+        .flex-container h6{
+            display: inline-block;
             background-size: auto;
             border: 1px black;
             padding: 15px;
+            text-align: left; 
+        }
+
+        .flex-container button{
+            float: right; 
+            padding: 3px;
+            background-color: rgb(12, 12, 12);
+            color: white;
+            padding-right: 10px;
         }
 
         .flex-container h6.active{
             color: #0c7db1;
         }
 
-        /* .flex-container p{
+        .container input.checkbox{
+            float: left;
+        }
+
+        .container{
+            text-align: right; 
+            padding-right: 20px;    
+        }
+
+        .container button {
             display: inline-block;
-        } */
+        }
+
+        .container button.button-parent {
+            background-color: #d5d0d0;
+            border: 1px black;
+            padding-left: 10px; 
+            padding-right: 10px;
+            padding: 5px;
+        }
         
     </style>
 
@@ -211,66 +252,77 @@
                 <a href="#">
                     <span class="icon"><i class="fas fa-home"></i></span>
                     <span class="item">Dashboards</span>
+                    <span style="float: right; color: grey;">&#8942;</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fas fa-desktop"></i></span>
                     <span class="item">Record</span>
+                    <span style="float: right; color: grey;">&#8942;</span>
                 </a>
             </li>
             <li>
                 <a href="#" class="active">
                     <span class="icon"><i class="fas fa-user-friends"></i></span>
                     <span class="item">Leave</span>
+                    <span style="float: right; color: grey;">&#8942;</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
                     <span class="item">Attendance</span>
+                    <span style="float: right; color: grey;">&#8942;</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fas fa-database"></i></span>
                     <span class="item">Performance</span>
+                    <span style="float: right; color: grey;">&#8942;</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fas fa-chart-line"></i></span>
                     <span class="item">Training</span>
+                    <span style="float: right; color: grey;">&#8942;</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fas fa-user-shield"></i></span>
                     <span class="item">Recruitment</span>
+                    <span style="float: right; color: grey;">&#8942;</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fas fa-cog"></i></span>
                     <span class="item">Digital Applications</span>
+                    <span style="float: right; color: grey;">&#8942;</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fas fa-chart-line"></i></span>
                     <span class="item">Surveys</span>
+                    <span style="float: right; color: grey;">&#8942;</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fas fa-user-shield"></i></span>
                     <span class="item">Security</span>
+                    <span style="float: right; color: grey;">&#8942;</span>
                 </a>
             </li>
             <li>
                 <a href="#">
                     <span class="icon"><i class="fas fa-cog"></i></span>
                     <span class="item">Help</span>
+                    <span style="float: right; color: grey;">&#8942;</span>
                 </a>
             </li>
         </ul>
@@ -283,22 +335,33 @@
     <!--content-->
     <div class="section" style="padding-left: 30px;">
         <br>
-        <h3>Leaves</h3>
+        <div class="top-container">
+            <h3 class="leaves">Leaves</h3>
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+            <i class="fa fa-circle" style="color: green">&nbsp;<h3><font color="black">Charles</font></h3></i>
+            <i class="fa fa-envelope"></i>
+        </div>
         <br>
         <div class="flex-container">
-            <div> <h6 class="active"> My Leave </h6></div>
-            <div> <h6>Assign Leave</h6> </div>
-            <div> <h6>Manage Leave</h6> </div>
-            <div> <h6>Leave Balance</h6> </div>
-            <div> <h6>Leave Calender</h6> </div>
-            <div> <button style="text-align: right; background-color: rgb(12, 12, 12);"><font color=white>Apply for Leave</font></button> </div>
+             <h6 class="active"> My Leave </h6>
+             <h6>Assign Leave</h6>
+             <h6>Manage Leave</h6>
+             <h6>Leave Balance</h6>
+             <h6>Leave Calender</h6> 
+            <button>Apply for Leave</button>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <input class="checkbox" type="checkbox" name="employee"/>
+            <button class="button-parent">Manage Leave Applications</button> 
+            <button class="button-parent"><i class="fa fa-filter"></i>&nbsp;Search & Filter</button> 
         </div>
     </div>
     <br>
-    <br>
     
     <div class="section">
-        <div class="container">
+        <div>
             <table>
                 
                 <tr>

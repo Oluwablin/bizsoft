@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <!-- Bootstrap CSS 4 -->
-    <!-- <link rel="stylesheet" href="{{ asset('assets/frontend/customer/v2/assets/bootstrap4/bootstrap.min.css') }}" /> -->
+    <!-- <link rel="stylesheet" href=".../assets/bootstrap4/bootstrap.min.css') }}" /> -->
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -17,9 +17,6 @@
     />
 
     <!-- Bootstrap 5 -->
-    
-
-    <!-- owl carousel -->
 
     <title> Leave </title>
 
@@ -136,7 +133,33 @@
             margin-left: 0;
             width: 100%;
         }
+        
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            
+        }
 
+        th{
+            background: paleturquoise;
+            text-align: left;
+        }
+
+        td{
+            text-align: left;
+        }
+
+        tr{
+            border-bottom: 1px solid #ddd;
+        }
+
+        th, td {
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            padding-right: 40px;
+        }
+        
     </style>
 
 </head>
@@ -241,34 +264,33 @@
     </div>
 
     <!--content-->
-    <div class="section">
+    <div class="section" style="padding-left: 30px;">
+        <br>
         <h3>Leaves</h3>
     </div>
+    <br>
+    <br>
     
     <div class="section">
         <div class="container">
             <table>
-                <thead>
-                    <tr>
-                        <th>Items</th>
-                        <th>Expenditure</th>
-                    </tr>
-                </thead>
+                
                 <tr>
-                    <th>Employee</th>
+                    <th> <input type="checkbox" name="employee" />&nbsp;&nbsp;&nbsp; Employee</th>
                     <th>Job Title</th>
                     <th>Department</th>
-                </tr>
+                </tr>              
                 <tr>
-                    <td>Andorra Office</td>
+                    <td> <input type="checkbox" name="andorra1" />&nbsp;&nbsp;&nbsp; Andorra Office</td>
                     <td>Pending-Level1</td>
                     <td>Olabode Azeez Meshinoye</td>
                 </tr>
                 <tr>
-                    <td>Andorra Office</td>
+                    <td> <input type="checkbox" name="andorra2" />&nbsp;&nbsp;&nbsp; Andorra Office</td>
                     <td>Pending-Level1</td>
                     <td>Olabode Azeez Meshinoye</td>
                 </tr>
+           
             </table>
         </div>
     </div>

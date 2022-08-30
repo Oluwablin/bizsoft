@@ -1,39 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-
-    <!-- Bootstrap CSS 4 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" 
-    />
-
-    <!-- Bootstrap 5 -->
-
-    <title> Leave </title>
-
-    <style>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+        <!-- Bootstrap CSS 4 -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+    
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" 
+        />
+    
+        <!-- Bootstrap 5 -->
+    
+        <title> Leave </title>
+    
+        <style>
+    
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    
+            *{
+                list-style: none;
+                text-decoration: none;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Open Sans', sans-serif;
+            }
+    
+            body{
+                background: #f5f6fa;
+            }
+    
+            .wrapper .sidebar{
+                background: rgb(31, 5, 104);
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 225px;
+                height: 100%;
+                padding: 20px 0;
+                transition: all 0.5s ease;
+            }
+    
+            .wrapper .sidebar .profile{
+                display: block;
+                padding: 12px 20px;
+                color: rgb(241, 237, 237);
+                font-size: 11px;
+                position: relative;
+            }
+    
+            .wrapper .sidebar .profile img{
+                display: block;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+    
+            .wrapper .sidebar .profile .icon{
+                color: #ffffff;
+                margin: 10px 0 5px;
+            }
+    
+            .wrapper .sidebar .profile .item{
+                color: rgb(206, 240, 253);
+                font-size: 11px;
+            }
+    
+            .wrapper .sidebar ul li a{
+                display: block;
+                padding: 12px 20px;
+                color: rgb(241, 237, 237);
+                font-size: 11px;
+                position: relative;
+            }
+    
+            .wrapper .sidebar ul li a .icon{
+                color: #dee4ec;
+                width: 30px;
+            }
+    
+            .wrapper .sidebar ul li a:hover,
+            .wrapper .sidebar ul li a.active{
+                color: #0c7db1;
+                background:purple;
+                border-right: 2px solid rgb(5, 68, 104);
+            }
+    
+            .wrapper .sidebar ul li a:hover .icon,
+            .wrapper .sidebar ul li a.active .icon{
+                color: #0c7db1;
+            }
+    
+            .wrapper .sidebar ul li a:hover:before,
+            .wrapper .sidebar ul li a.active:before{
+                display: block;
+            }
+    
+            .wrapper .section{
+                width: calc(100% - 225px);
+                margin-left: 225px;
+                transition: all 0.5s ease;
+            }
+    
+            .wrapper .section .top_navbar{
+                background: rgb(7, 105, 185);
+                height: 50px;
+                display: flex;
+                align-items: center;
+                padding: 0 30px;
+    
+            }
+    
+            .wrapper .section .top_navbar .hamburger a{
+                font-size: 28px;
+                color: #f4fbff;
+            }
+    
+            .wrapper .section .top_navbar .hamburger a:hover{
+                color: #a2ecff;
+            }
+    
+            body.active .wrapper .sidebar{
+                left: -225px;
+            }
+    
+            body.active .wrapper .section{
+                margin-left: 0;
+                width: 100%;
+            }
+            
+            table{
+                border-collapse: collapse;
+                width: 100%;
+                font-size: 11px
+            }
+    
+            th{
+                background: mediumpurple;
+                text-align: left;
+            }
+    
+            td{
+                text-align: left;
+            }
+    
+            tr{
+                border-bottom: 1px solid #ddd;
+            }
+    
+            th, td {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 30px;
+                padding-right: 40px;
+            }
+    
+            .top-container h3{
+                display: inline-block;
+            }
+    
+            .top-container i{
+                float: right;
+                padding-right: 20px;
+                padding-left: 1em; 
+            }
+    
+            .flex-container{                 
+                background-color: lightgray;  
+                padding-right: 15px; 
+                padding: 10px;        
+            }
+    
+            .flex-container h6{
+                display: inline-block;
+                background-size: auto;
+                border: 1px black;
+                padding: 13px;
+                text-align: left;
+                font-size: 10px; 
+            }
+    
+            .flex-container button{
+                float: right; 
+                padding: 5px;
+                background-color: rgb(12, 10, 13);
+                color: white;
+                              
+            }
+    
+            .flex-container h6.active{
+                color: #0c7db1;
+            }
+    
+            .container input.checkbox{
+                float: left;
+            }
+    
+            .container{
+                text-align: right; 
+                padding-right: 12px;    
+            }
+    
+            .container button{
+                display: inline-block;
+            }
+    
+            .container button.button-parent{
+                background-color: #d5d0d0;
+                border: 1px black;
+                padding-left: 10px; 
+                padding-right: 10px;
+                padding: 10px;
+                font-size: 10px;
+            }
+            
+        </style>
+    
+    </head>
 
-        body{
-            background: #f5f6fa;
-            background-color: #d5d0d0;
-            background-color: #f1f1f1;
-        }
+    <body>
+
+    <!--Top menu -->
+    <!-- Sidebar -->
+    <div class="wrapper">
+         
+        <div class="sidebar">
+    
+            <!--profile icon & text-->
+            <div class="profile">
+                <span class="icon"><i class="fas fa-home"></i></span>
+                <span class="item">Bizsoft Solutions</span>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Dashboards</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Record</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="active">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Leave</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">Attendance</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Performance</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="item">Training</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-user-shield"></i></span>
+                        <span class="item">Recruitment</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="item">Digital Applications</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="item">Surveys</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-user-shield"></i></span>
+                        <span class="item">Security</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="item">Help</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+            </ul>
         
-    </style>
-</head>
-<body>
-
-</body>
+    
+           
+            <!--menu item-->
+        </div>
+    
+        <!--content-->
+        <div class="section" style="padding-left: 30px;">
+            <br>
+            <div class="top-container">
+                <h3 class="leaves">Leaves</h3>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <i class="fa fa-circle" style="color: green; font-size: 11px;">&nbsp;<h3><font color="black">Charles</font></h3></i>
+                <a href="#" style="color: gray;"><i class="fa fa-envelope"></i></a>
+            </div>
+            <br>
+            <div class="flex-container">
+                <h6><a href="index.html" ><font color="black">My Leave</font></a></h6>
+                <h6 class="active">Assign Leave</h6>
+                <h6><a href="#" ><font color="black">Manage Leave</font></a></h6>
+                <h6><a href="index.html" ><font color="black">Leave Balance</font></a></h6>
+                <h6><a href="index.html" ><font color="black">Leave Calendar</font></a></h6>
+                
+            </div>
+            <br>
+            <div>
+                <p style="font-size: 11px;"><b>Select an Employee to assign leave</b></p>
+            </div>
+            <br>
+            <div class="container">
+                
+                <button class="button-parent"><i class="fa fa-filter" style="color: grey;"></i>&nbsp;<a href="" ><font color="black">Search & Filter</font></a></button> 
+            </div>
+        </div>
+        <br>
+        
+        <div class="section">
+            <div>
+                <table>
+                    
+                    <tr class="employee">
+                        <th>Employee</th>
+                        <th>Job Title</th>
+                        <th>Department</th>
+                    </tr>              
+                    <tr class="andorra">
+                        <td>Olabode Azeez Meshinoye</td>
+                        <td>Pending - Level1</td>
+                        <td>Finance</td>
+                    </tr>
+                    <tr class="andorra2">
+                        <td>Andorra Gebastsh</td>
+                        <td>Pending - Level1</td>
+                        <td>Human Resources</td>
+                    </tr>
+                    <tr class="andorra3">
+                        <td>Andorra Gebastsh</td>
+                        <td>Pending - Level1</td>
+                        <td>Human Resources</td>
+                    </tr>
+                    <tr class="andorra4">
+                        <td>Andorra Gebastsh</td>
+                        <td>Pending - Level1</td>
+                        <td>Human Resources</td>
+                    </tr>
+                    <tr class="andorra5">
+                        <td>Andorra Gebastsh</td>
+                        <td>Pending - Level1</td>
+                        <td>Human Resources</td>
+                    </tr>
+                    <tr class="andorra6">
+                        <td>Andorra Gebastsh</td>
+                        <td>Pending - Level1</td>
+                        <td>Human Resources</td>
+                    </tr>
+               
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Javsacript -->
+    <script>
+        var hamburger = document.querySelector(".hamburger");
+        hamburger.addEventListener("click", function(){
+            document.querySelector("body").classList.toggle("active");
+        })
+    </script>
+    
+    </body>
 </html>

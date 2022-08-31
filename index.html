@@ -1,1061 +1,1095 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-
-    <!-- Bootstrap CSS 4 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" 
-    />
-
-    <!-- Bootstrap 5 -->
-
-    <title> Leave </title>
-
-    <style>
-
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+        <!-- Bootstrap CSS 4 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
         
-        @media (max-width: 640px) {
-            *{
-                list-style: none;
-                text-decoration: none;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Open Sans', sans-serif;
-            }
-
-            body{
-                background: #f5f6fa;
-            }
-
-            .wrapper .sidebar{
-                background: rgb(31, 5, 104);
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 225px;
-                height: 100%;
-                padding: 20px 0;
-                transition: all 0.5s ease;
-            }
-
-            .wrapper .sidebar .profile{
-                display: block;
-                padding: 12px 20px;
-                color: rgb(241, 237, 237);
-                font-size: 11px;
-                position: relative;
-            }
-
-            .wrapper .sidebar .profile img{
-                display: block;
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                margin: 0 auto;
-            }
-
-            .wrapper .sidebar .profile .icon{
-                color: #ffffff;
-                margin: 10px 0 5px;
-            }
-
-            .wrapper .sidebar .profile .item{
-                color: rgb(206, 240, 253);
-                font-size: 11px;
-            }
-
-            .wrapper .sidebar ul li a{
-                display: block;
-                padding: 12px 20px;
-                color: rgb(241, 237, 237);
-                font-size: 11px;
-                position: relative;
-            }
-
-            .wrapper .sidebar ul li a .icon{
-                color: #dee4ec;
-                width: 30px;
-            }
-
-            .wrapper .sidebar ul li a:hover,
-            .wrapper .sidebar ul li a.active{
-                color: #0c7db1;
-                background:purple;
-                border-right: 2px solid rgb(5, 68, 104);
-            }
-
-            .wrapper .sidebar ul li a:hover .icon,
-            .wrapper .sidebar ul li a.active .icon{
-                color: #0c7db1;
-            }
-
-            .wrapper .sidebar ul li a:hover:before,
-            .wrapper .sidebar ul li a.active:before{
-                display: block;
-            }
-
-            .wrapper .section{
-                width: calc(100% - 225px);
-                margin-left: 225px;
-                transition: all 0.5s ease;
-            }
-
-            .wrapper .section .top_navbar{
-                background: rgb(7, 105, 185);
-                height: 50px;
-                display: flex;
-                align-items: center;
-                padding: 0 30px;
-
-            }
-
-            .wrapper .section .top_navbar .hamburger a{
-                font-size: 28px;
-                color: #f4fbff;
-            }
-
-            .wrapper .section .top_navbar .hamburger a:hover{
-                color: #a2ecff;
-            }
-
-            body.active .wrapper .sidebar{
-                left: -225px;
-            }
-
-            body.active .wrapper .section{
-                margin-left: 0;
-                width: 100%;
-            }
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" 
+        />
+    
+        <!-- Bootstrap 5 -->
+    
+        <title> Leave </title>
+    
+        <style>
+    
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
             
-            table{
-                border-collapse: collapse;
-                width: 100%;
-                font-size: 11px
-            }
+            @media (max-width: 640px) {
+                *{
+                    list-style: none;
+                    text-decoration: none;
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Open Sans', sans-serif;
+                }
+    
+                body{
+                    background: #f5f6fa;
+                }
+    
+                .wrapper .sidebar{
+                    background: rgb(31, 5, 104);
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 225px;
+                    height: 100%;
+                    padding: 20px 0;
+                    transition: all 0.5s ease;
+                }
+    
+                .wrapper .sidebar .profile{
+                    display: block;
+                    padding: 12px 20px;
+                    color: rgb(241, 237, 237);
+                    font-size: 11px;
+                    position: relative;
+                }
+    
+                .wrapper .sidebar .profile img{
+                    display: block;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    margin: 0 auto;
+                }
+    
+                .wrapper .sidebar .profile .icon{
+                    color: #ffffff;
+                    margin: 10px 0 5px;
+                }
+    
+                .wrapper .sidebar .profile .item{
+                    color: rgb(206, 240, 253);
+                    font-size: 11px;
+                }
+    
+                .wrapper .sidebar ul li a{
+                    display: block;
+                    padding: 12px 20px;
+                    color: rgb(241, 237, 237);
+                    font-size: 11px;
+                    position: relative;
+                }
+    
+                .wrapper .sidebar ul li a .icon{
+                    color: #dee4ec;
+                    width: 30px;
+                }
+    
+                .wrapper .sidebar ul li a:hover,
+                .wrapper .sidebar ul li a.active{
+                    color: #0c7db1;
+                    background:purple;
+                    border-right: 2px solid rgb(5, 68, 104);
+                }
+    
+                .wrapper .sidebar ul li a:hover .icon,
+                .wrapper .sidebar ul li a.active .icon{
+                    color: #0c7db1;
+                }
+    
+                .wrapper .sidebar ul li a:hover:before,
+                .wrapper .sidebar ul li a.active:before{
+                    display: block;
+                }
+    
+                .wrapper .section{
+                    width: calc(100% - 225px);
+                    margin-left: 225px;
+                    transition: all 0.5s ease;
+                }
+    
+                .wrapper .section .top_navbar{
+                    background: rgb(7, 105, 185);
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 30px;
+    
+                }
+    
+                .wrapper .section .top_navbar .hamburger a{
+                    font-size: 28px;
+                    color: #f4fbff;
+                }
+    
+                .wrapper .section .top_navbar .hamburger a:hover{
+                    color: #a2ecff;
+                }
+    
+                body.active .wrapper .sidebar{
+                    left: -225px;
+                }
+    
+                body.active .wrapper .section{
+                    margin-left: 0;
+                    width: 100%;
+                }
+                
+                table{
+                    border-collapse: collapse;
+                    width: 100%;
+                    font-size: 11px
+                }
+    
+                th{
+                    background: mediumpurple;
+                    text-align: left;
+                }
+    
+                td{
+                    text-align: left;
+                }
+    
+                tr{
+                    border-bottom: 1px solid #ddd;
+                }
+    
+                th, td {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 30px;
+                    padding-right: 40px;
+                }
+    
+                .top-container h6{
+                    display: inline-block;
+                }
+    
+                .top-container i.fas{
+                    float: right;
+                    padding-right: 20px;
+                    padding-left: 1em;                
+                    padding-top: 10px;
+                }
+    
+                .top-container i.fa{
+                    float: right;
+                    padding-right: 20px;
+                    padding-left: 1em;                
+                }
+    
+                .flex-container{                 
+                    background-color: lightgray;  
+                    padding-right: 15px; 
+                    padding: 10px;        
+                }
+    
+                .flex-container h6{
+                    display: inline-block;
+                    background-size: auto;
+                    border: 1px black;
+                    padding: 10px;
+                    text-align: left;
+                    font-size: 10px; 
+                }
+    
+                .flex-container button{
+                    float: right; 
+                    padding: 2px;
+                    background-color: rgb(12, 10, 13);
+                    color: white;
+                    padding-bottom: 2px;          
+                }
+    
+                .flex-container h6.active{
+                    color: #0c7db1;
+                }
+    
+                .container input.checkbox{
+                    float: left;
+                    padding-left: 0px;
+                }
+    
+                .container{
+                    text-align: right; 
+                    padding-right: 0px;    
+                }
+    
+                .container button{
+                    display: inline-block;
+                }
+    
+                .container button.button-parent{
+                    background-color: #d5d0d0;
+                    border: 1px black;
+                    padding-left: 10px; 
+                    padding-right: 5px;
+                    padding: 4px;
+                    font-size: 10px;
+                }
 
-            th{
-                background: mediumpurple;
-                text-align: left;
+                .form-group{
+                    font-size: 10px; 
+                }
             }
+            @media (min-width: 641px) and (max-width: 800px) {
+                *{
+                    list-style: none;
+                    text-decoration: none;
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Open Sans', sans-serif;
+                }
+    
+                body{
+                    background: #f5f6fa;
+                }
+    
+                .wrapper .sidebar{
+                    background: rgb(31, 5, 104);
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 225px;
+                    height: 100%;
+                    padding: 20px 0;
+                    transition: all 0.5s ease;
+                }
+    
+                .wrapper .sidebar .profile{
+                    display: block;
+                    padding: 12px 20px;
+                    color: rgb(241, 237, 237);
+                    font-size: 11px;
+                    position: relative;
+                }
+    
+                .wrapper .sidebar .profile img{
+                    display: block;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    margin: 0 auto;
+                }
+    
+                .wrapper .sidebar .profile .icon{
+                    color: #ffffff;
+                    margin: 10px 0 5px;
+                }
+    
+                .wrapper .sidebar .profile .item{
+                    color: rgb(206, 240, 253);
+                    font-size: 11px;
+                }
+    
+                .wrapper .sidebar ul li a{
+                    display: block;
+                    padding: 12px 20px;
+                    color: rgb(241, 237, 237);
+                    font-size: 11px;
+                    position: relative;
+                }
+    
+                .wrapper .sidebar ul li a .icon{
+                    color: #dee4ec;
+                    width: 30px;
+                }
+    
+                .wrapper .sidebar ul li a:hover,
+                .wrapper .sidebar ul li a.active{
+                    color: #0c7db1;
+                    background:purple;
+                    border-right: 2px solid rgb(5, 68, 104);
+                }
+    
+                .wrapper .sidebar ul li a:hover .icon,
+                .wrapper .sidebar ul li a.active .icon{
+                    color: #0c7db1;
+                }
+    
+                .wrapper .sidebar ul li a:hover:before,
+                .wrapper .sidebar ul li a.active:before{
+                    display: block;
+                }
+    
+                .wrapper .section{
+                    width: calc(100% - 225px);
+                    margin-left: 225px;
+                    transition: all 0.5s ease;
+                }
+    
+                .wrapper .section .top_navbar{
+                    background: rgb(7, 105, 185);
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 30px;
+    
+                }
+    
+                .wrapper .section .top_navbar .hamburger a{
+                    font-size: 28px;
+                    color: #f4fbff;
+                }
+    
+                .wrapper .section .top_navbar .hamburger a:hover{
+                    color: #a2ecff;
+                }
+    
+                body.active .wrapper .sidebar{
+                    left: -225px;
+                }
+    
+                body.active .wrapper .section{
+                    margin-left: 0;
+                    width: 100%;
+                }
+                
+                table{
+                    border-collapse: collapse;
+                    width: 100%;
+                    font-size: 11px
+                }
+    
+                th{
+                    background: mediumpurple;
+                    text-align: left;
+                }
+    
+                td{
+                    text-align: left;
+                }
+    
+                tr{
+                    border-bottom: 1px solid #ddd;
+                }
+    
+                th, td {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 30px;
+                    padding-right: 40px;
+                }
+    
+                .top-container h6{
+                    display: inline-block;
+                }
+    
+                .top-container i.fas{
+                    float: right;
+                    padding-right: 20px;
+                    padding-left: 1em;                
+                    padding-top: 10px;
+                }
+    
+                .top-container i.fa{
+                    float: right;
+                    padding-right: 20px;
+                    padding-left: 1em;                
+                }
+    
+                .flex-container{                 
+                    background-color: lightgray;  
+                    padding-right: 15px; 
+                    padding: 10px;        
+                }
+    
+                .flex-container h6{
+                    display: inline-block;
+                    background-size: auto;
+                    border: 1px black;
+                    padding: 10px;
+                    text-align: left;
+                    font-size: 10px; 
+                }
+    
+                .flex-container button{
+                    float: right; 
+                    padding: 2px;
+                    background-color: rgb(12, 10, 13);
+                    color: white;
+                    padding-bottom: 2px;          
+                }
+    
+                .flex-container h6.active{
+                    color: #0c7db1;
+                }
+    
+                .container input.checkbox{
+                    float: left;
+                    padding-left: 0px;
+                }
+    
+                .container{
+                    text-align: right; 
+                    padding-right: 0px;    
+                }
+    
+                .container button{
+                    display: inline-block;
+                }
+    
+                .container button.button-parent{
+                    background-color: #d5d0d0;
+                    border: 1px black;
+                    padding-left: 10px; 
+                    padding-right: 5px;
+                    padding: 4px;
+                    font-size: 10px;
+                }
 
-            td{
-                text-align: left;
+                .form-group{
+                    font-size: 10px; 
+                }
             }
+            @media (min-width: 801px) and (max-width: 1024px) {
+                *{
+                    list-style: none;
+                    text-decoration: none;
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Open Sans', sans-serif;
+                }
+    
+                body{
+                    background: #f5f6fa;
+                }
+    
+                .wrapper .sidebar{
+                    background: rgb(31, 5, 104);
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 225px;
+                    height: 100%;
+                    padding: 20px 0;
+                    transition: all 0.5s ease;
+                }
+    
+                .wrapper .sidebar .profile{
+                    display: block;
+                    padding: 12px 20px;
+                    color: rgb(241, 237, 237);
+                    font-size: 11px;
+                    position: relative;
+                }
+    
+                .wrapper .sidebar .profile img{
+                    display: block;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    margin: 0 auto;
+                }
+    
+                .wrapper .sidebar .profile .icon{
+                    color: #ffffff;
+                    margin: 10px 0 5px;
+                }
+    
+                .wrapper .sidebar .profile .item{
+                    color: rgb(206, 240, 253);
+                    font-size: 11px;
+                }
+    
+                .wrapper .sidebar ul li a{
+                    display: block;
+                    padding: 12px 20px;
+                    color: rgb(241, 237, 237);
+                    font-size: 11px;
+                    position: relative;
+                }
+    
+                .wrapper .sidebar ul li a .icon{
+                    color: #dee4ec;
+                    width: 30px;
+                }
+    
+                .wrapper .sidebar ul li a:hover,
+                .wrapper .sidebar ul li a.active{
+                    color: #0c7db1;
+                    background:purple;
+                    border-right: 2px solid rgb(5, 68, 104);
+                }
+    
+                .wrapper .sidebar ul li a:hover .icon,
+                .wrapper .sidebar ul li a.active .icon{
+                    color: #0c7db1;
+                }
+    
+                .wrapper .sidebar ul li a:hover:before,
+                .wrapper .sidebar ul li a.active:before{
+                    display: block;
+                }
+    
+                .wrapper .section{
+                    width: calc(100% - 225px);
+                    margin-left: 225px;
+                    transition: all 0.5s ease;
+                }
+    
+                .wrapper .section .top_navbar{
+                    background: rgb(7, 105, 185);
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 30px;
+    
+                }
+    
+                .wrapper .section .top_navbar .hamburger a{
+                    font-size: 28px;
+                    color: #f4fbff;
+                }
+    
+                .wrapper .section .top_navbar .hamburger a:hover{
+                    color: #a2ecff;
+                }
+    
+                body.active .wrapper .sidebar{
+                    left: -225px;
+                }
+    
+                body.active .wrapper .section{
+                    margin-left: 0;
+                    width: 100%;
+                }
+                
+                table{
+                    border-collapse: collapse;
+                    width: 100%;
+                    font-size: 11px
+                }
+    
+                th{
+                    background: mediumpurple;
+                    text-align: left;
+                }
+    
+                td{
+                    text-align: left;
+                }
+    
+                tr{
+                    border-bottom: 1px solid #ddd;
+                }
+    
+                th, td {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 30px;
+                    padding-right: 40px;
+                }
+    
+                .top-container h6{
+                    display: inline-block;
+                }
+    
+                .top-container i.fas{
+                    float: right;
+                    padding-right: 20px;
+                    padding-left: 1em;                
+                    padding-top: 10px;
+                }
+    
+                .top-container i.fa{
+                    float: right;
+                    padding-right: 20px;
+                    padding-left: 1em;                
+                }
+    
+                .flex-container{                 
+                    background-color: lightgray;  
+                    padding-right: 15px; 
+                    padding: 10px;        
+                }
+    
+                .flex-container h6{
+                    display: inline-block;
+                    background-size: auto;
+                    border: 1px black;
+                    padding: 10px;
+                    text-align: left;
+                    font-size: 10px; 
+                }
+    
+                .flex-container button{
+                    float: right; 
+                    padding: 2px;
+                    background-color: rgb(12, 10, 13);
+                    color: white;
+                    padding-bottom: 2px;          
+                }
+    
+                .flex-container h6.active{
+                    color: #0c7db1;
+                }
+    
+                .container input.checkbox{
+                    float: left;
+                    padding-left: 0px;
+                }
+    
+                .container{
+                    text-align: right; 
+                    padding-right: 0px;    
+                }
+    
+                .container button{
+                    display: inline-block;
+                }
+    
+                .container button.button-parent{
+                    background-color: #d5d0d0;
+                    border: 1px black;
+                    padding-left: 10px; 
+                    padding-right: 5px;
+                    padding: 4px;
+                    font-size: 10px;
+                }
 
-            tr{
-                border-bottom: 1px solid #ddd;
+                .form-group{
+                    font-size: 10px; 
+                }
             }
+    
+            @media (min-width: 1025px) { 
+                *{
+                    list-style: none;
+                    text-decoration: none;
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Open Sans', sans-serif;
+                }
+    
+                body{
+                    background: #f5f6fa;
+                }
+    
+                .wrapper .sidebar{
+                    background: rgb(31, 5, 104);
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 225px;
+                    height: 100%;
+                    padding: 20px 0;
+                    transition: all 0.5s ease;
+                }
+    
+                .wrapper .sidebar .profile{
+                    display: block;
+                    padding: 12px 20px;
+                    color: rgb(241, 237, 237);
+                    font-size: 11px;
+                    position: relative;
+                }
+    
+                .wrapper .sidebar .profile img{
+                    display: block;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    margin: 0 auto;
+                }
+    
+                .wrapper .sidebar .profile .icon{
+                    color: #ffffff;
+                    margin: 10px 0 5px;
+                }
+    
+                .wrapper .sidebar .profile .item{
+                    color: rgb(206, 240, 253);
+                    font-size: 11px;
+                }
+    
+                .wrapper .sidebar ul li a{
+                    display: block;
+                    padding: 12px 20px;
+                    color: rgb(241, 237, 237);
+                    font-size: 11px;
+                    position: relative;
+                }
+    
+                .wrapper .sidebar ul li a .icon{
+                    color: #dee4ec;
+                    width: 30px;
+                }
+    
+                .wrapper .sidebar ul li a:hover,
+                .wrapper .sidebar ul li a.active{
+                    color: #0c7db1;
+                    background:purple;
+                    border-right: 2px solid rgb(5, 68, 104);
+                }
+    
+                .wrapper .sidebar ul li a:hover .icon,
+                .wrapper .sidebar ul li a.active .icon{
+                    color: #0c7db1;
+                }
+    
+                .wrapper .sidebar ul li a:hover:before,
+                .wrapper .sidebar ul li a.active:before{
+                    display: block;
+                }
+    
+                .wrapper .section{
+                    width: calc(100% - 225px);
+                    margin-left: 225px;
+                    transition: all 0.5s ease;
+                }
+    
+                .wrapper .section .top_navbar{
+                    background: rgb(7, 105, 185);
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 30px;
+    
+                }
+    
+                .wrapper .section .top_navbar .hamburger a{
+                    font-size: 28px;
+                    color: #f4fbff;
+                }
+    
+                .wrapper .section .top_navbar .hamburger a:hover{
+                    color: #a2ecff;
+                }
+    
+                body.active .wrapper .sidebar{
+                    left: -225px;
+                }
+    
+                body.active .wrapper .section{
+                    margin-left: 0;
+                    width: 100%;
+                }
+                
+                table{
+                    border-collapse: collapse;
+                    width: 100%;
+                    font-size: 11px
+                }
+    
+                th{
+                    background: mediumpurple;
+                    text-align: left;
+                }
+    
+                td{
+                    text-align: left;
+                }
+    
+                tr{
+                    border-bottom: 1px solid #ddd;
+                }
+    
+                th, td {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 30px;
+                    padding-right: 40px;
+                }
+    
+                .top-container h6{
+                    display: inline-block;
+                    margin:  none;
+                }
+    
+                .top-container i.fas{
+                    float: right;
+                    padding-right: 20px;
+                    padding-left: 1em;                
+                    padding-top: 10px;
+                }
+    
+                .top-container i.fa{
+                    float: right;
+                    padding-right: 20px;
+                    padding-left: 1em;                
+                }
+    
+                .flex-container{                 
+                    background-color: lightgray;  
+                    padding-right: 15px; 
+                    padding: 10px;        
+                }
+    
+                .flex-container h6{
+                    display: inline-block;
+                    background-size: auto;
+                    border: 1px black;
+                    padding: 10px;
+                    text-align: left;
+                    font-size: 10px; 
+                }
+    
+                .flex-container button{
+                    float: right; 
+                    padding: 2px;
+                    background-color: rgb(12, 10, 13);
+                    color: white;
+                    padding-bottom: 2px;          
+                }
+    
+                .flex-container h6.active{
+                    color: #0c7db1;
+                }
+    
+                .container input.checkbox{
+                    float: left;
+                    padding-left: 0px;
+                }
+    
+                .container{
+                    text-align: right; 
+                    padding-right: 0px;    
+                }
+    
+                .container button{
+                    display: inline-block;
+                }
+    
+                .container button.button-parent{
+                    background-color: #d5d0d0;
+                    border: 1px black;
+                    padding-left: 10px; 
+                    padding-right: 5px;
+                    padding: 4px;
+                    font-size: 10px;
+                }
 
-            th, td {
-                padding-top: 10px;
-                padding-bottom: 10px;
-                padding-left: 30px;
-                padding-right: 40px;
+                .form-group{
+                    font-size: 10px; 
+                }
             }
-
-            .top-container h6{
-                display: inline-block;
-            }
-
-            .top-container i{
-                float: right;
-                padding-right: 20px;
-                padding-left: 1em; 
-            }
-
-            .flex-container{                 
-                background-color: lightgray;  
-                padding-right: 15px; 
-                padding: 10px;        
-            }
-
-            .flex-container h6{
-                display: inline-block;
-                background-size: auto;
-                border: 1px black;
-                padding: 10px;
-                text-align: left;
-                font-size: 10px; 
-            }
-
-            .flex-container button{
-                float: right; 
-                padding: 2px;
-                background-color: rgb(12, 10, 13);
-                color: white;
-                padding-bottom: 2px;          
-            }
-
-            .flex-container h6.active{
-                color: #0c7db1;
-            }
-
-            .container input.checkbox{
-                float: left;
-                padding-left: 0px;
-            }
-
-            .container{
-                text-align: right; 
-                padding-right: 0px;    
-            }
-
-            .container button{
-                display: inline-block;
-            }
-
-            .container button.button-parent{
-                background-color: #d5d0d0;
-                border: 1px black;
-                padding-left: 10px; 
-                padding-right: 5px;
-                padding: 4px;
-                font-size: 10px;
-            }
-        }
-        @media (min-width: 641px) and (max-width: 800px) {
-            *{
-                list-style: none;
-                text-decoration: none;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Open Sans', sans-serif;
-            }
-
-            body{
-                background: #f5f6fa;
-            }
-
-            .wrapper .sidebar{
-                background: rgb(31, 5, 104);
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 225px;
-                height: 100%;
-                padding: 20px 0;
-                transition: all 0.5s ease;
-            }
-
-            .wrapper .sidebar .profile{
-                display: block;
-                padding: 12px 20px;
-                color: rgb(241, 237, 237);
-                font-size: 11px;
-                position: relative;
-            }
-
-            .wrapper .sidebar .profile img{
-                display: block;
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                margin: 0 auto;
-            }
-
-            .wrapper .sidebar .profile .icon{
-                color: #ffffff;
-                margin: 10px 0 5px;
-            }
-
-            .wrapper .sidebar .profile .item{
-                color: rgb(206, 240, 253);
-                font-size: 11px;
-            }
-
-            .wrapper .sidebar ul li a{
-                display: block;
-                padding: 12px 20px;
-                color: rgb(241, 237, 237);
-                font-size: 11px;
-                position: relative;
-            }
-
-            .wrapper .sidebar ul li a .icon{
-                color: #dee4ec;
-                width: 30px;
-            }
-
-            .wrapper .sidebar ul li a:hover,
-            .wrapper .sidebar ul li a.active{
-                color: #0c7db1;
-                background:purple;
-                border-right: 2px solid rgb(5, 68, 104);
-            }
-
-            .wrapper .sidebar ul li a:hover .icon,
-            .wrapper .sidebar ul li a.active .icon{
-                color: #0c7db1;
-            }
-
-            .wrapper .sidebar ul li a:hover:before,
-            .wrapper .sidebar ul li a.active:before{
-                display: block;
-            }
-
-            .wrapper .section{
-                width: calc(100% - 225px);
-                margin-left: 225px;
-                transition: all 0.5s ease;
-            }
-
-            .wrapper .section .top_navbar{
-                background: rgb(7, 105, 185);
-                height: 50px;
-                display: flex;
-                align-items: center;
-                padding: 0 30px;
-
-            }
-
-            .wrapper .section .top_navbar .hamburger a{
-                font-size: 28px;
-                color: #f4fbff;
-            }
-
-            .wrapper .section .top_navbar .hamburger a:hover{
-                color: #a2ecff;
-            }
-
-            body.active .wrapper .sidebar{
-                left: -225px;
-            }
-
-            body.active .wrapper .section{
-                margin-left: 0;
-                width: 100%;
-            }
+    
             
-            table{
-                border-collapse: collapse;
-                width: 100%;
-                font-size: 11px
-            }
-
-            th{
-                background: mediumpurple;
-                text-align: left;
-            }
-
-            td{
-                text-align: left;
-            }
-
-            tr{
-                border-bottom: 1px solid #ddd;
-            }
-
-            th, td {
-                padding-top: 10px;
-                padding-bottom: 10px;
-                padding-left: 30px;
-                padding-right: 40px;
-            }
-
-            .top-container h6{
-                display: inline-block;
-            }
-
-            .top-container i{
-                float: right;
-                padding-right: 20px;
-                padding-left: 1em; 
-            }
-
-            .flex-container{                 
-                background-color: lightgray;  
-                padding-right: 15px; 
-                padding: 10px;        
-            }
-
-            .flex-container h6{
-                display: inline-block;
-                background-size: auto;
-                border: 1px black;
-                padding: 10px;
-                text-align: left;
-                font-size: 10px; 
-            }
-
-            .flex-container button{
-                float: right; 
-                padding: 2px;
-                background-color: rgb(12, 10, 13);
-                color: white;
-                padding-bottom: 2px;          
-            }
-
-            .flex-container h6.active{
-                color: #0c7db1;
-            }
-
-            .container input.checkbox{
-                float: left;
-                padding-left: 0px;
-            }
-
-            .container{
-                text-align: right; 
-                padding-right: 0px;    
-            }
-
-            .container button{
-                display: inline-block;
-            }
-
-            .container button.button-parent{
-                background-color: #d5d0d0;
-                border: 1px black;
-                padding-left: 10px; 
-                padding-right: 5px;
-                padding: 4px;
-                font-size: 10px;
-            }
-        }
-        @media (min-width: 801px) and (max-width: 1024px) {
-            *{
-                list-style: none;
-                text-decoration: none;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Open Sans', sans-serif;
-            }
-
-            body{
-                background: #f5f6fa;
-            }
-
-            .wrapper .sidebar{
-                background: rgb(31, 5, 104);
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 225px;
-                height: 100%;
-                padding: 20px 0;
-                transition: all 0.5s ease;
-            }
-
-            .wrapper .sidebar .profile{
-                display: block;
-                padding: 12px 20px;
-                color: rgb(241, 237, 237);
-                font-size: 11px;
-                position: relative;
-            }
-
-            .wrapper .sidebar .profile img{
-                display: block;
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                margin: 0 auto;
-            }
-
-            .wrapper .sidebar .profile .icon{
-                color: #ffffff;
-                margin: 10px 0 5px;
-            }
-
-            .wrapper .sidebar .profile .item{
-                color: rgb(206, 240, 253);
-                font-size: 11px;
-            }
-
-            .wrapper .sidebar ul li a{
-                display: block;
-                padding: 12px 20px;
-                color: rgb(241, 237, 237);
-                font-size: 11px;
-                position: relative;
-            }
-
-            .wrapper .sidebar ul li a .icon{
-                color: #dee4ec;
-                width: 30px;
-            }
-
-            .wrapper .sidebar ul li a:hover,
-            .wrapper .sidebar ul li a.active{
-                color: #0c7db1;
-                background:purple;
-                border-right: 2px solid rgb(5, 68, 104);
-            }
-
-            .wrapper .sidebar ul li a:hover .icon,
-            .wrapper .sidebar ul li a.active .icon{
-                color: #0c7db1;
-            }
-
-            .wrapper .sidebar ul li a:hover:before,
-            .wrapper .sidebar ul li a.active:before{
-                display: block;
-            }
-
-            .wrapper .section{
-                width: calc(100% - 225px);
-                margin-left: 225px;
-                transition: all 0.5s ease;
-            }
-
-            .wrapper .section .top_navbar{
-                background: rgb(7, 105, 185);
-                height: 50px;
-                display: flex;
-                align-items: center;
-                padding: 0 30px;
-
-            }
-
-            .wrapper .section .top_navbar .hamburger a{
-                font-size: 28px;
-                color: #f4fbff;
-            }
-
-            .wrapper .section .top_navbar .hamburger a:hover{
-                color: #a2ecff;
-            }
-
-            body.active .wrapper .sidebar{
-                left: -225px;
-            }
-
-            body.active .wrapper .section{
-                margin-left: 0;
-                width: 100%;
-            }
-            
-            table{
-                border-collapse: collapse;
-                width: 100%;
-                font-size: 11px
-            }
-
-            th{
-                background: mediumpurple;
-                text-align: left;
-            }
-
-            td{
-                text-align: left;
-            }
-
-            tr{
-                border-bottom: 1px solid #ddd;
-            }
-
-            th, td {
-                padding-top: 10px;
-                padding-bottom: 10px;
-                padding-left: 30px;
-                padding-right: 40px;
-            }
-
-            .top-container h6{
-                display: inline-block;
-            }
-
-            .top-container i{
-                float: right;
-                padding-right: 20px;
-                padding-left: 1em; 
-            }
-
-            .flex-container{                 
-                background-color: lightgray;  
-                padding-right: 15px; 
-                padding: 10px;        
-            }
-
-            .flex-container h6{
-                display: inline-block;
-                background-size: auto;
-                border: 1px black;
-                padding: 10px;
-                text-align: left;
-                font-size: 10px; 
-            }
-
-            .flex-container button{
-                float: right; 
-                padding: 2px;
-                background-color: rgb(12, 10, 13);
-                color: white;
-                padding-bottom: 2px;          
-            }
-
-            .flex-container h6.active{
-                color: #0c7db1;
-            }
-
-            .container input.checkbox{
-                float: left;
-                padding-left: 0px;
-            }
-
-            .container{
-                text-align: right; 
-                padding-right: 0px;    
-            }
-
-            .container button{
-                display: inline-block;
-            }
-
-            .container button.button-parent{
-                background-color: #d5d0d0;
-                border: 1px black;
-                padding-left: 10px; 
-                padding-right: 5px;
-                padding: 4px;
-                font-size: 10px;
-            }
-        }
-
-        @media (min-width: 1025px) { 
-            *{
-                list-style: none;
-                text-decoration: none;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Open Sans', sans-serif;
-            }
-
-            body{
-                background: #f5f6fa;
-            }
-
-            .wrapper .sidebar{
-                background: rgb(31, 5, 104);
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 225px;
-                height: 100%;
-                padding: 20px 0;
-                transition: all 0.5s ease;
-            }
-
-            .wrapper .sidebar .profile{
-                display: block;
-                padding: 12px 20px;
-                color: rgb(241, 237, 237);
-                font-size: 11px;
-                position: relative;
-            }
-
-            .wrapper .sidebar .profile img{
-                display: block;
-                width: 100px;
-                height: 100px;
-                border-radius: 50%;
-                margin: 0 auto;
-            }
-
-            .wrapper .sidebar .profile .icon{
-                color: #ffffff;
-                margin: 10px 0 5px;
-            }
-
-            .wrapper .sidebar .profile .item{
-                color: rgb(206, 240, 253);
-                font-size: 11px;
-            }
-
-            .wrapper .sidebar ul li a{
-                display: block;
-                padding: 12px 20px;
-                color: rgb(241, 237, 237);
-                font-size: 11px;
-                position: relative;
-            }
-
-            .wrapper .sidebar ul li a .icon{
-                color: #dee4ec;
-                width: 30px;
-            }
-
-            .wrapper .sidebar ul li a:hover,
-            .wrapper .sidebar ul li a.active{
-                color: #0c7db1;
-                background:purple;
-                border-right: 2px solid rgb(5, 68, 104);
-            }
-
-            .wrapper .sidebar ul li a:hover .icon,
-            .wrapper .sidebar ul li a.active .icon{
-                color: #0c7db1;
-            }
-
-            .wrapper .sidebar ul li a:hover:before,
-            .wrapper .sidebar ul li a.active:before{
-                display: block;
-            }
-
-            .wrapper .section{
-                width: calc(100% - 225px);
-                margin-left: 225px;
-                transition: all 0.5s ease;
-            }
-
-            .wrapper .section .top_navbar{
-                background: rgb(7, 105, 185);
-                height: 50px;
-                display: flex;
-                align-items: center;
-                padding: 0 30px;
-
-            }
-
-            .wrapper .section .top_navbar .hamburger a{
-                font-size: 28px;
-                color: #f4fbff;
-            }
-
-            .wrapper .section .top_navbar .hamburger a:hover{
-                color: #a2ecff;
-            }
-
-            body.active .wrapper .sidebar{
-                left: -225px;
-            }
-
-            body.active .wrapper .section{
-                margin-left: 0;
-                width: 100%;
-            }
-            
-            table{
-                border-collapse: collapse;
-                width: 100%;
-                font-size: 11px
-            }
-
-            th{
-                background: mediumpurple;
-                text-align: left;
-            }
-
-            td{
-                text-align: left;
-            }
-
-            tr{
-                border-bottom: 1px solid #ddd;
-            }
-
-            th, td {
-                padding-top: 10px;
-                padding-bottom: 10px;
-                padding-left: 30px;
-                padding-right: 40px;
-            }
-
-            .top-container h6{
-                display: inline-block;
-            }
-
-            .top-container i{
-                float: right;
-                padding-right: 20px;
-                padding-left: 1em; 
-            }
-
-            .flex-container{                 
-                background-color: lightgray;  
-                padding-right: 15px; 
-                padding: 10px;        
-            }
-
-            .flex-container h6{
-                display: inline-block;
-                background-size: auto;
-                border: 1px black;
-                padding: 10px;
-                text-align: left;
-                font-size: 10px; 
-            }
-
-            .flex-container button{
-                float: right; 
-                padding: 2px;
-                background-color: rgb(12, 10, 13);
-                color: white;
-                padding-bottom: 2px;          
-            }
-
-            .flex-container h6.active{
-                color: #0c7db1;
-            }
-
-            .container input.checkbox{
-                float: left;
-                padding-left: 0px;
-            }
-
-            .container{
-                text-align: right; 
-                padding-right: 0px;    
-            }
-
-            .container button{
-                display: inline-block;
-            }
-
-            .container button.button-parent{
-                background-color: #d5d0d0;
-                border: 1px black;
-                padding-left: 10px; 
-                padding-right: 5px;
-                padding: 4px;
-                font-size: 10px;
-            }
-        }
-
+        </style>
+    
+    </head>
+
+    <body>
+
+
+
+    <!--Top menu -->
+    <!-- Sidebar -->
+    <div class="wrapper">
+     
+        <div class="sidebar">
+
+            <!--profile icon & text-->
+            <div class="profile">
+                <span class="icon"><i class="fas fa-home"></i></span>
+                <span class="item">Bizsoft Solutions</span>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Dashboards</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-desktop"></i></span>
+                        <span class="item">Record</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="active">
+                        <span class="icon"><i class="fas fa-user-friends"></i></span>
+                        <span class="item">Leave</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">Attendance</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-database"></i></span>
+                        <span class="item">Performance</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="item">Training</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-user-shield"></i></span>
+                        <span class="item">Recruitment</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="item">Digital Applications</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="item">Surveys</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-user-shield"></i></span>
+                        <span class="item">Security</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="item">Help</span>
+                        <span style="float: right; color: grey;">&#8942;</span>
+                    </a>
+                </li>
+            </ul>
         
-    </style>
+        
+            <!--menu item-->
+        </div>
 
-</head>
-
-<body>
-
-
-
-<!--Top menu -->
-<!-- Sidebar -->
-<div class="wrapper">
-    <!-- Navbar -->
-    <!-- <div class="section">
-        <div class="top_navbar">
-            <div class="hamburger">
-                <a href="#">
-                    <i class="fas fa-bars"></i>
-                </a>
+        <!--content-->
+        <div class="section">      
+            <div class="top-container" style="padding-left: 15px;">
+                <h6 class="leaves">Leaves</h6>
+                <i class="fas fa-angle-down"></i>
+                <i class="fa fa-circle " style="color: green; font-size: 11px;">&nbsp;<h6><font color="black">Charles</font></h6></i>
+                <a href="#" style="color: gray;"><i class="fas fa-envelope"></i></a>
+            </div>
+            <br>
+            <div class="flex-container">
+                <h6 class="active"> My Leave </h6>
+                <h6><a href="index2.html" ><font color="black">Assign Leave</font></a></h6>
+                <h6><a href="#" ><font color="black">Manage Leave</font></a></h6>
+                <h6><a href="index.html" ><font color="black">Leave Balance</font></a></h6>
+                <h6><a href="index.html" ><font color="black">Leave Calendar</font></a></h6>
+                <button><a href="#"><font color="white">Apply for Leave</font></a></button>
+            </div>
+            <br>
+            <br>
+            <div class="container">
+                <input class="checkbox" type="checkbox" name="employee"/>
+                <button class="button-parent"><a href="#" ><font color="black">Manage Leave Applications</font></a></button> 
+                <button class="button-parent"><i class="fa fa-filter" style="color: grey;"></i>&nbsp;<a data-toggle="modal" data-target="#newsearch" class="newsearch" href="#newsearch"><font color="black">Search & Filter</font></a></button> 
             </div>
         </div>
-    </div> -->
-     
-    <div class="sidebar">
-
-        <!--profile icon & text-->
-        <div class="profile">
-            <span class="icon"><i class="fas fa-home"></i></span>
-            <span class="item">Bizsoft Solutions</span>
-        </div>
-        <ul>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-home"></i></span>
-                    <span class="item">Dashboards</span>
-                    <span style="float: right; color: grey;">&#8942;</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-desktop"></i></span>
-                    <span class="item">Record</span>
-                    <span style="float: right; color: grey;">&#8942;</span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="active">
-                    <span class="icon"><i class="fas fa-user-friends"></i></span>
-                    <span class="item">Leave</span>
-                    <span style="float: right; color: grey;">&#8942;</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                    <span class="item">Attendance</span>
-                    <span style="float: right; color: grey;">&#8942;</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-database"></i></span>
-                    <span class="item">Performance</span>
-                    <span style="float: right; color: grey;">&#8942;</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-chart-line"></i></span>
-                    <span class="item">Training</span>
-                    <span style="float: right; color: grey;">&#8942;</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-user-shield"></i></span>
-                    <span class="item">Recruitment</span>
-                    <span style="float: right; color: grey;">&#8942;</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-cog"></i></span>
-                    <span class="item">Digital Applications</span>
-                    <span style="float: right; color: grey;">&#8942;</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-chart-line"></i></span>
-                    <span class="item">Surveys</span>
-                    <span style="float: right; color: grey;">&#8942;</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-user-shield"></i></span>
-                    <span class="item">Security</span>
-                    <span style="float: right; color: grey;">&#8942;</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <span class="icon"><i class="fas fa-cog"></i></span>
-                    <span class="item">Help</span>
-                    <span style="float: right; color: grey;">&#8942;</span>
-                </a>
-            </li>
-        </ul>
-    
-       
-        <!--menu item-->
-    </div>
-
-    <!--content-->
-    <div class="section">
+        <br>
         
-        <div class="top-container" style="padding-left: 15px;">
-            <h6 class="leaves">Leaves</h6>
-            <i class="fa fa-angle-down"></i>
-            <i class="fa fa-circle " style="color: green; font-size: 11px;">&nbsp;<h6><font color="black">Charles</font></h6></i>
-            <a href="#" style="color: gray;"><i class="fa fa-envelope"></i></a>
-        </div>
-        <br>
-        <div class="flex-container">
-            <h6 class="active"> My Leave </h6>
-            <h6><a href="index2.html" ><font color="black">Assign Leave</font></a></h6>
-            <h6><a href="#" ><font color="black">Manage Leave</font></a></h6>
-            <h6><a href="index.html" ><font color="black">Leave Balance</font></a></h6>
-            <h6><a href="index.html" ><font color="black">Leave Calendar</font></a></h6>
-            <button><a href="#"><font color="white">Apply for Leave</font></a></button>
-        </div>
-        <br>
-        <br>
-        <div class="container">
-            <input class="checkbox" type="checkbox" name="employee"/>
-            <button class="button-parent"><a href="#" ><font color="black">Manage Leave Applications</font></a></button> 
-            <button class="button-parent"><i class="fa fa-filter" style="color: grey;"></i>&nbsp;<a data-toggle="modal" data-target="#newsearch" class="newsearch" href="#newsearch"><font color="black">Search & Filter</font></a></button> 
-        </div>
-    </div>
-    <br>
-    
-    <div class="section">
-        <div>
-            <table>
-                
-                <tr class="employee">
-                    <th> <input type="checkbox" name="employee" />&nbsp;&nbsp;&nbsp; Employee</th>
-                    <th>Job Title</th>
-                    <th>Department</th>
-                </tr>              
-                <tr class="andorra">
-                    <td> <input type="checkbox" name="andorra1" />&nbsp;&nbsp;&nbsp; Andorra Office</td>
-                    <td>Pending - Level1</td>
-                    <td>Olabode Azeez Meshinoye</td>
-                </tr>
-                <tr class="andorra2">
-                    <td> <input type="checkbox" name="andorra2" />&nbsp;&nbsp;&nbsp; Andorra Office</td>
-                    <td>Pending - Level1</td>
-                    <td>Olabode Azeez Meshinoye</td>
-                </tr>
-           
-            </table>
-        </div>
-    </div>
-    <div class="modal" id="newsearch" role="dialog" aria-hidden="false">
-        <div class="modal-dialog ">
-            <div class="modal-content-wrapper">
-            <div class="modal-content">
-                <div class="modal-header clearfix text-left">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
-                    </button>
-                    <div>
-                    <p style="display: inline-block;">Search & Filter</p>
-                    <button style="float: right; background-color: midnightblue; color: white;">Apply &nbsp;</button>
-                    <p style="float: right;">Reset &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <div class="section">
+            <div>
+                <table>
                     
-                    </div>
-                    <div class="modal-body">
-                        <form action="" method="post">
-                            <div class="">
-
-                            </div>
-                            <div class="form-group">
-                                <label>From</label>
-                                <input type="text" class="form-control" name="from">
-                            </div>
-                            <div class="form-group">
-                                <label>To</label>
-                                <select class="form-control select2" name="to" data-init-plugin="select2">
-                                    <option value=""></option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Status</label>
-                                <select class="form-control select2" name="status" data-init-plugin="select2">
-                                    <option value=""></option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Leave Type</label>
-                                <select class="form-control select2" name="leave_type" data-init-plugin="select2">
-                                    <option value=""></option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">
-                            Close
+                    <tr class="employee">
+                        <th> <input type="checkbox" name="employee" />&nbsp;&nbsp;&nbsp; Employee</th>
+                        <th>Job Title</th>
+                        <th>Department</th>
+                    </tr>              
+                    <tr class="andorra">
+                        <td> <input type="checkbox" name="andorra1" />&nbsp;&nbsp;&nbsp; Andorra Office</td>
+                        <td>Pending - Level1</td>
+                        <td>Olabode Azeez Meshinoye</td>
+                    </tr>
+                    <tr class="andorra2">
+                        <td> <input type="checkbox" name="andorra2" />&nbsp;&nbsp;&nbsp; Andorra Office</td>
+                        <td>Pending - Level1</td>
+                        <td>Olabode Azeez Meshinoye</td>
+                    </tr>
+            
+                </table>
+            </div>
+        </div>
+        <div class="modal" id="newsearch" role="dialog" aria-hidden="false">
+            <div class="modal-dialog">
+                <div class="modal-content-wrapper">
+                <div class="modal-content">
+                    <div class="modal-header clearfix text-left">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="pg-close fs-14"></i>
                         </button>
+                        <div>
+                        <p style="display: inline-block; padding-left: 15px;">Search & Filter</p>
+                        <button style="float: right; background-color: midnightblue; color: white;">Apply &nbsp;</button>
+                        <p style="float: right;">Reset &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                        
+                        </div>
+                        <div class="modal-body">
+                            <form action="" method="post">
+                                <div class="">
+
+                                </div>
+                                <div class="form-group">
+                                    <label>From</label>
+                                    <input type="text" class="form-control" name="from">
+                                </div>
+                                <div class="form-group">
+                                    <label>To</label>
+                                    <select class="form-control select2" name="to" data-init-plugin="select2">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <select class="form-control select2" name="status" data-init-plugin="select2">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Leave Type</label>
+                                    <select class="form-control select2" name="leave_type" data-init-plugin="select2">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
     
 
-<!-- Javsacript -->
-<script>
-    var hamburger = document.querySelector(".hamburger");
-    hamburger.addEventListener("click", function(){
-        document.querySelector("body").classList.toggle("active");
-    })
-</script>
+    <!-- Javsacript -->
+    <script>
+        var hamburger = document.querySelector(".hamburger");
+        hamburger.addEventListener("click", function(){
+            document.querySelector("body").classList.toggle("active");
+        })
+    </script>
 
-</body>
+    </body>
 </html
